@@ -1,4 +1,4 @@
-:: ASNI
+:: ANSI
 :: 2024/04/18 Thu
 :: Ray Liu
 :: https://github.com/rayliu0712/7zxcp
@@ -13,7 +13,7 @@ if not ^%pre%==^" (
 )
 
 set /a i=1
-set dir=abc
+set dir=foo
 
 
 :loop
@@ -43,6 +43,9 @@ echo [ 韓文 ] 949 & echo.
 echo [ 繁中 ] 950 & echo.
 echo [ UTF8 ] 65001 & echo.
 set /p "cp=Code Page > "
+
+:: 自訂7z路徑，建議用絕對路徑，必要時加雙引號
 "C:\Program Files\7-Zip\7z.exe" x %file% -o%dir% -mcp=%cp%
 
+:: 如果不在乎解壓縮結果可以拿掉pause
 pause
